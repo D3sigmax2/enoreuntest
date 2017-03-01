@@ -1,8 +1,12 @@
 package persons;
+import threads.Thread_person;
 
 public class Person extends AbPerson {
 	
-	public Person(){
+	public Person(String text){
+		
+		Thread_person thread = new Thread_person(text);
+		thread.start();
 		
 	}
 	

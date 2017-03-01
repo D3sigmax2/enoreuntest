@@ -14,11 +14,13 @@ public class Thread_person extends Thread{
 	public void run()
 	{
 		while(running){
-			Utilility randtest = new Utilility();
-			System.out.println(randtest.rand(10, 20));
+			
+			//System.out.println(randtest.rand(10, 20));
 		System.out.println(text);
 		try{
-			Thread.sleep(Math.round(Math.random()*1000));
+			Utilility rand = new Utilility();
+			
+			Thread.sleep(rand.rand(500, 1000));
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
