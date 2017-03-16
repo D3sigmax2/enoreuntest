@@ -11,8 +11,8 @@ public class Main {
 		Thread_person person = new Thread_person(text2);
 		person.start();
 		person1.start();*/
-		Person person = new Person(text);
-		Person person1 = new Person(text2);
+		Person person = new Person(5);
+		Person person1 = new Person(5);
 		
 		
 	}

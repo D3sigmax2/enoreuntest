@@ -1,8 +1,7 @@
 package utility;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Utilility {
-	
+public class Utility {
 	
 	public int rand(int min,int max){
 		
@@ -11,5 +10,5 @@ public class Utilility {
 		
 		
 	}
-
+	
 }
