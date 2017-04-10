@@ -16,7 +16,7 @@ public class Thread_clock extends Thread {
 				  a = 0;
 				  //System.out.println();
 			  }
-			System.out.flush();
+			
 			a++;
 			//System.out.print(a);
 			try{

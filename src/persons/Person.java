@@ -10,6 +10,7 @@ public class Person extends AbPerson {
 		this.start = start;
 		this.stop = choose_destination(numberOfStops);
 		
+		
 	}
 	
 	public int choose_destination(int numberOfStops){
