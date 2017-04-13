@@ -22,8 +22,9 @@ public class Main {
 		person.start();
 		person_two.start();*/
 		Rush_hours hours = new Rush_hours();
-		Station station = new Station(hours.first_station,clock);
-		Station station2 = new Station(hours.second_station,clock);
+		Station station = new Station(hours.first_station,clock,"");
+		Station station2 = new Station(hours.second_station,clock,"            ");
+		Station station3 = new Station(hours.third_station,clock,"    		 	    ");
 		
 	}
 	
