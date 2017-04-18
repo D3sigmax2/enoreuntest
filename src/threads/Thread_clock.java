@@ -21,7 +21,7 @@ public class Thread_clock extends Thread {
 			//System.out.print(a);
 			try{
 				
-				Thread.sleep(125);
+				Thread.sleep(2);
 				
 			}catch(InterruptedException e){
 				e.printStackTrace();
