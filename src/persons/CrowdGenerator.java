@@ -1,22 +1,27 @@
 package persons;
 import java.util.ArrayList;
 
+import graphics.Graphics;
 import threads.*;
+import stations.Station;
 
 public class CrowdGenerator extends Thread {
 	private boolean running = true;
 	private int importance, rush_hours[][], clock_time;
 	private int time = 1;
-	public ArrayList<Person> persons = new ArrayList<Person>();
+	private ArrayList<Person> persons = new ArrayList<Person>();
 	Thread_clock clock;
 	private String text;
+	Station station;
+	private Graphics graphic;
 	
-	public CrowdGenerator(int importance, int rush_hours[][], Thread_clock clock, String text) {
+	public CrowdGenerator(Graphics graphic, int importance, int rush_hours[][], Thread_clock clock, Station station) {
 		
+		this.graphic = graphic;
 		this.importance = importance;
 		this.rush_hours = rush_hours;
 		this.clock = clock;
-		this.text = text;
+		this.station = station;
 	}
 	
 	public void run(){
@@ -30,7 +35,7 @@ public class CrowdGenerator extends Thread {
 				
 					for(int k = 0; k <rush_hours[1][time];k++){
 						
-						persons.add(new Person(1,6));
+						persons.add(new Person(1,6,station,graphic));
 						
 					}
 					clock_time = clock.a;
@@ -44,7 +49,7 @@ public class CrowdGenerator extends Thread {
 					
 					for(int k = 0; k < rush_hours[1][0];k++){
 						
-						persons.add(new Person(1,6));
+						persons.add(new Person(1,6,station,graphic));
 						
 					}
 					clock_time = clock.a;
@@ -53,8 +58,9 @@ public class CrowdGenerator extends Thread {
 				
 				
 				if(persons.size()!=0){
-					System.out.println(text + clock.a + " " +persons.size());
+					//System.out.println(text + clock.a + " " +persons.size());
 				}
+				station.getpersonlist(persons);
 				persons.clear();
 				try{
 					Thread.sleep(1);

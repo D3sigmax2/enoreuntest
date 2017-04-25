@@ -2,13 +2,35 @@ package stations;
 import persons.*;
 import threads.*;
 
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import graphics.Graphics;
+import  persons.*;
+
 public class Station {
 	
-	public Station(int rush_hours[][],Thread_clock clock,String text){
-
-		CrowdGenerator generator = new CrowdGenerator(12, rush_hours, clock, text);
+	int pos[]= new int[2];
+	private Graphics graphic;
+	JLabel image;
+	private ArrayList<Person> persons_received = new ArrayList<Person>();
+	
+	public Station(int rush_hours[][],Thread_clock clock,String img,int pos[],Graphics graphic){
+		
+		this.pos[0] = pos[0];
+		this.pos[1] = pos[1];
+		this.graphic = graphic;
+		image = new JLabel( new ImageIcon(img));
+		graphic.jframeadd(image, pos);
+		CrowdGenerator generator = new CrowdGenerator(graphic,12, rush_hours, clock, this);
 		generator.start();
 		
 	}
-
+	public void getpersonlist(ArrayList<Person> persons){
+		persons_received.addAll(persons);
+	}
+	public int[] getpos(){
+		return pos;
+	}
 }
