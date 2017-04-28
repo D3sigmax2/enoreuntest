@@ -44,7 +44,7 @@ public class CrowdGenerator extends Thread {
 						time++;
 					}
 				}
-				else if(0 == clock.a%rush_hours[0][0]&&rush_hours[0][time]!=clock.a&&clock.a != clock_time){
+				if(0 == clock.a%rush_hours[0][0]&&rush_hours[0][time]!=clock.a&&clock.a != clock_time){
 					for(int k = 0; k < rush_hours[1][0];k++){
 						
 						persons.add(new Person(1,6,station,this.graphic));

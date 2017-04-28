@@ -29,7 +29,7 @@ public class Graphics extends Thread{
 		//refreshpane();
 		while(true){
 			refreshpane();
-			System.out.println("FPPPPPS");
+			//System.out.println("FPPPPPS");
 			try{
 				Thread.sleep(1000/60);
 			}catch(InterruptedException e){
