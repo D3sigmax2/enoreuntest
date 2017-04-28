@@ -32,10 +32,9 @@ public class CrowdGenerator extends Thread {
 					time = 1;
 				}
 				if(rush_hours[0][time]==clock.a&&clock.a != clock_time){
-				
 					for(int k = 0; k <rush_hours[1][time];k++){
 						
-						persons.add(new Person(1,6,station,graphic));
+						persons.add(new Person(1,6,station,this.graphic));
 						
 					}
 					clock_time = clock.a;
@@ -46,10 +45,9 @@ public class CrowdGenerator extends Thread {
 					}
 				}
 				else if(0 == clock.a%rush_hours[0][0]&&rush_hours[0][time]!=clock.a&&clock.a != clock_time){
-					
 					for(int k = 0; k < rush_hours[1][0];k++){
 						
-						persons.add(new Person(1,6,station,graphic));
+						persons.add(new Person(1,6,station,this.graphic));
 						
 					}
 					clock_time = clock.a;
@@ -58,9 +56,11 @@ public class CrowdGenerator extends Thread {
 				
 				
 				if(persons.size()!=0){
-					//System.out.println(text + clock.a + " " +persons.size());
+					System.out.println(clock.a + " " +persons.size());
+					
 				}
 				station.getpersonlist(persons);
+				
 				persons.clear();
 				try{
 					Thread.sleep(1);

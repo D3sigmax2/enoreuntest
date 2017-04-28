@@ -22,8 +22,8 @@ public class Station {
 		this.pos[1] = pos[1];
 		this.graphic = graphic;
 		image = new JLabel( new ImageIcon(img));
-		graphic.jframeadd(image, pos);
-		CrowdGenerator generator = new CrowdGenerator(graphic,12, rush_hours, clock, this);
+		graphic.jframeadd(image, this.pos);
+		CrowdGenerator generator = new CrowdGenerator(this.graphic,12, rush_hours, clock, this);
 		generator.start();
 		
 	}

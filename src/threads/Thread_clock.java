@@ -18,7 +18,7 @@ public class Thread_clock extends Thread {
 			  }
 			
 			a++;
-			//System.out.print(a);
+			System.out.print(a);
 			try{
 				
 				Thread.sleep(2);

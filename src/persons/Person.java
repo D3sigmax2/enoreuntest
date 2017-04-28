@@ -7,25 +7,29 @@ import stations.Station;
 import threads.Thread_person;
 import utility.Utility;
 
-public class Person extends AbPerson {
+public class Person {
 	
 	
 	Utility random = new Utility();
 	int pos[] = new int[2];
 	Station station;
 	private Graphics graphic;
-	JLabel image = new JLabel( new ImageIcon("person.png"));;
+	JLabel image;
+	private int start;
+	private int stop;
 	
 	public Person(int start, int numberOfStops, Station station, Graphics graphic){
 		
-		super();
+		
+		image = new JLabel( new ImageIcon("person.png"));
 		this.start = start;
 		this.stop = choose_destination(numberOfStops);
 		this.station = station;
 		this.graphic = graphic;
-		this.pos[0]=random.rand(200, 500);
-		this.pos[1]=random.rand(200, 800);
-		graphic.jframeadd(image, pos);
+		this.pos[0]= random.rand(station.getpos()[0]+100, station.getpos()[0]+300);
+		this.pos[1]= random.rand(station.getpos()[1], station.getpos()[1]+100);
+		
+		this.graphic.jframeadd(image,this.pos);
 		
 	}
 	
