@@ -25,12 +25,27 @@ public class Station {
 		graphic.jframeadd(image, this.pos);
 		CrowdGenerator generator = new CrowdGenerator(this.graphic,12, rush_hours, clock, this);
 		generator.start();
+		Thread_listmanager manager = new Thread_listmanager(this,this.graphic);
+		
+		manager.start();
 		
 	}
 	public void getpersonlist(ArrayList<Person> persons){
+		synchronized(persons_received){
 		persons_received.addAll(persons);
+		}
 	}
 	public int[] getpos(){
 		return pos;
+	}
+	public ArrayList<Person> getpersons(){
+		synchronized(persons_received){
+		return persons_received;
+		}
+	}
+	public void clearpersons(){
+		synchronized(persons_received){
+		persons_received.clear();
+		}
 	}
 }

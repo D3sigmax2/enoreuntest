@@ -44,6 +44,7 @@ public class Graphics extends Thread{
 		
 		//frame.getContentPane().add(pane);
 		//pane.remove(pane_person);
+		
 		frame.setContentPane(pane);
 		
 	}
@@ -72,11 +73,10 @@ public class Graphics extends Thread{
 		pane.add(image);
 		
 	}
-	public void jframeadd2(JLabel image,int pos[]){
+	public void remove(JLabel image){
 		
 		
-		image.setBounds(pos[0], pos[1], image.getPreferredSize().width, image.getPreferredSize().height);
-		pane_person.add(image);
+		pane.remove(image);
 		
 	}
 	

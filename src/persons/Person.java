@@ -39,6 +39,11 @@ public class Person {
 	public int[] getpos(){
 		return pos;
 	}
+	public JLabel getimg(){
+		
+		return image;
+		
+	}
 	
 	public void setpos(int pos[]){
 		this.pos[0] = pos[0];

@@ -63,7 +63,7 @@ public class CrowdGenerator extends Thread {
 				
 				persons.clear();
 				try{
-					Thread.sleep(1);
+					Thread.sleep(800);
 				}catch(InterruptedException e){
 					e.printStackTrace();
 				}
